@@ -1,25 +1,92 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './Assets/Styles/main.css'
+
+import NavbarComponent from './Components/Navbar'
+import HeroComponent from './Components/Hero'
+import Container from 'react-bootstrap/Container'
+
+import FirstFeatures from './Components/FirstFeatures'
+import SecondFeatures from './Components/SecondFeatures'
+import ThirdFeatures from './Components/ThirdFeatures'
+
+import Testimonial from './Components/Testimonial'
+import Services from './Components/Services'
+import Subscribe from './Components/Subscribe'
+import Footer from './Components/Footer'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Container
+        fluid
+        className='p-0 hero-container'
+      >
+
+        {/* NAVBAR COMPONENT */}
+        <NavbarComponent />
+        {/* HERO COMPONENT */}
+
+        <div className='hero'>
+          <HeroComponent />
+        </div>
+      </Container>
+
+      <Container
+        fluid
+        className='features-container'
+      >
+        {/* Features 1 Component */}
+
+        <FirstFeatures />
+
+        {/* Features 2 Component */}
+      </Container>
+
+      <Container
+        fluid
+        className='features-2-container'
+      >
+        <SecondFeatures />
+      </Container>
+
+      <Container
+        fluid
+        className='features-3-container'
+      >
+        <ThirdFeatures />
+      </Container>
+      
+      <Container
+        fluid
+        className='testimonial-container'
+      >
+        <Testimonial />
+      </Container>
+
+      <Container
+        fluid
+        className='services-container'
+      >
+        <Services />
+      </Container>
+
+      <Container
+        fluid
+        className='subscribe-container mt-5 bg-primary text-white'
+      >
+        <Subscribe />
+      </Container>
+
+      <Container
+        fluid
+        className='footer-container'>
+          <Footer />
+      </Container>
+
+    </>
+  )
 }
 
-export default App;
+export default App
